@@ -4,7 +4,7 @@
 
 body {
   color: #000;
-  font-family: "Verdana", sans-serif;
+  font-family: "Roboto", Trebuchet, sans-serif;
   margin: 4em;
   background: #FDD476;
   width: 800px;
@@ -17,6 +17,7 @@ body {
 article {
   background: #fff;
   border: 3px;
+
   width: 760px;
   padding:30px 30px;
   margin: auto;
