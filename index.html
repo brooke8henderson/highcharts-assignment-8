@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Two Charts on distrubution of U.S. foreign aid  </title>
+
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/main.css">
+
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/themes/sunset.js"></script>
+
+</head>
+
+<header>
+
+    <h1>Trends in U.S. Foreign Aid</h1>
+    <h2> By Brooke Henderson </h2>
+
+</header>
+
+
+
+
+  <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto">
+  </div>
+  <article>
+
+  <p>
+  In 2007, President George Bush entered into a 10-year Memoradum of Understanding with Israel to allocate over $30 billion of the U.S. budget to funding Israeli military initiatives. As a result, Israel is the largest recipient of U.S. aid, with Egypt in second place and Afghanistan following behind as third. Because of the importance of foreign aid in the U.S. budget, Congress has required the United States Agency for International Development to submit a report annually since 1945, according to the USAID website.
+  </p>
+
+  <p>
+    <small>
+    Source: <a href="https://explorer.usaid.gov/aid-trends.html">The USAID Foreign Assistance Database </a> "U.S. Overseas Loans and Grants" report to Congress
+</small>
+</p>
+
+
+  <div id="container2" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+
+<script>
+Highcharts.chart('container', {
+  chart: {
+    type: 'column'
+  },
+  title: {
+    text: 'Comparison of Top Three Countries Recieving U.S. Funding '
+  },
+  subtitle: {
+    text: 'Top categories of aid recieved in 2015 '
+  },
+  xAxis: {
+    categories: [
+      'Conflict, peace, and security',
+      'Emergency response',
+      'Post secondary education',
+      'Disaster prevention and preparedness',
+      'General environment protection'
+    ],
+    crosshair: true
+  },
+  yAxis: {
+     min: 20000,
+     max: 10000000000,
+    type: 'logarithmic',
+    title: {
+      text: 'Dollar amount given from U.S.'
+    }
+  },
+  tooltip: {
+    footerFormat: '</table>',
+    shared: true,
+    useHTML: true
+  },
+  plotOptions: {
+    column: {
+      pointPadding: 0.2,
+      borderWidth: 0
+    }
+  },
+  series: [{
+    name: 'Israel',
+    data: [3282902911, 10000000, 1413927, 470000, 25000]
+
+  }, {
+    name: 'Egypt',
+    data: [4627994852,13397389,10513322,20000,695000]
+
+  }, {
+    name: 'Afghanistan',
+    data: [1160435944,142083714,22077448,1383975,3774044]
+
+  }]
+});
+
+
+</script>
+
+
+<script>
+
+Highcharts.chart('container2', {
+    chart: {
+        type: 'area',
+        inverted: true
+    },
+    title: {
+        text: 'Comparison of contribution frequency from the U.S. from 2012 to 2014'
+    },
+    subtitle: {
+    text: 'Source: The USAID Foreign Assistance Database (FADB). For more information please visit: https://explorer.usaid.gov',
+        style: {
+            position: 'absolute',
+            right: '0px',
+            bottom: '10px'
+        }
+    },
+    legend: {
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'top',
+        x: -150,
+        y: 100,
+        floating: true,
+        borderWidth: 1,
+        backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
+    },
+    xAxis: {
+        categories: [
+            'Church and Faith Based',
+      'Enterprises',
+      'Goverment',
+      'Multilateral',
+      'Networks',
+      'NGO',
+      'Public and Private Partnerships',
+      'Universities and Research Institutes',
+        ]
+    },
+    yAxis: {
+        title: {
+            text: 'Frequency of contributions'
+        },
+        labels: {
+            formatter: function () {
+                return this.value;
+            }
+        },
+        min: 0
+    },
+    plotOptions: {
+        area: {
+            fillOpacity: 0.5
+        }
+    },
+    series: [{
+        name: '2012',
+        data: [1082,21162,18010,4097,81,13562,41,1626]
+    }, {
+        name: '2013',
+        data: [699,19713,17991,3015,139,12557,60,1529]
+        },{
+        name: '2014',
+        data: [770,19034,16223,3086,155,13823,66,1741]
+
+    }]
+});
+
+</script>
+
+<p>
+  The second chart shows a more detailed break down of how the U.S. aid is distributed, which relevent to the U.S.'s political stading in the global arena because much of its funding goes to infrastructure abroad in areas affected by wars. Afghanistan, for instance, has been a large recipient of U.S. funding since 2002, one year after the U.S. invaded.
+</p>
+
+<p>
+  <small>
+  Source: <a href="https://explorer.usaid.gov/aid-trends.html">The USAID Foreign Assistance Database </a> ,The United States Agency for International Development's "U.S. Overseas Loans and Grants" report to Congress
+
+</small>
+</p>
+
+
+
+	</article>
+	</html>
